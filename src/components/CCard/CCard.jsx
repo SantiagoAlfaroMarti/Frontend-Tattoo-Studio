@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export const CCard = ({name, description}) => {
+export const CCard = ({ name, description }) => {
     return (
         <>
             <div className='card'>

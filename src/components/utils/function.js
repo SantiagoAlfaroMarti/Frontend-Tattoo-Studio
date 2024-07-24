@@ -1,10 +1,10 @@
 let interval = null;
 
 export const isTokenValid = (expireAt) => {
-    if(interval){
+    if (interval) {
         clearInterval(interval)
     }
-     interval = setInterval(() => {
+    interval = setInterval(() => {
         console.log("interval");
         const time = new Date();
         const currentTimeStamp = Date.parse(time) / 1000;

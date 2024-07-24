@@ -12,12 +12,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body{
+
+body {
   min-height: 97vh;
 }
-.flex{
+
+.flex {
   display: flex
 }
-.justify-space-between{
+
+.justify-space-between {
   justify-content: space-between;
 }

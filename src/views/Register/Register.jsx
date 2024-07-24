@@ -42,10 +42,10 @@ export const Register = () => {
                     name="email"
                     id=""
                     placeholder='Email'
-                    onChange={handleChange} 
+                    onChange={handleChange}
                 />
             </div><div>
-                <input 
+                <input
                     type="password"
                     name="password_hash"
                     id=""
@@ -53,7 +53,7 @@ export const Register = () => {
                     onChange={handleChange}
                 />
             </div><div>
-                <input 
+                <input
                     type="button"
                     value="Register"
                     onClick={register}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const CInput = ({ type = 'text', name = "", placeholder = "", emitFunction, emitOnClickButton, className, value, label }) => {
     return (

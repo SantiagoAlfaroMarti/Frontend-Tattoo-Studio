@@ -1,0 +1,9 @@
+.home-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.home-page > img {
+    max-width: 80%;
+}

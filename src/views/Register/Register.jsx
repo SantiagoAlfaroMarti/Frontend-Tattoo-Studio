@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { registerUser } from '../../services/apiCall.js';
 import { useNavigate } from 'react-router-dom';
+import "./Register.css";
 
 export const Register = () => {
     const navigate = useNavigate()
@@ -34,31 +35,33 @@ export const Register = () => {
     }
 
     return (
-        <>
-            <h1>Register</h1>
-            <div>
+        <div className="register-page">
+            <div className="register-box">
+                <h1>Register</h1>
+                <h2>
+                    Create an account or <NavLink to="/login">login</NavLink>
+                </h2>
+
                 <input
                     type="text"
                     name="email"
-                    id=""
-                    placeholder='Email'
+                    id="email"
+                    placeholder="Email"
                     onChange={handleChange}
                 />
-            </div><div>
                 <input
                     type="password"
-                    name="password_hash"
-                    id=""
-                    placeholder='Password'
+                    name="password"
+                    id="password"
+                    placeholder="Password"
                     onChange={handleChange}
                 />
-            </div><div>
                 <input
                     type="button"
                     value="Register"
                     onClick={register}
                 />
             </div>
-        </>
-    )
-}
+        </div>
+    );
+};

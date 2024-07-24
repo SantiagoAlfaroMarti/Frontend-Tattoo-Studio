@@ -3,6 +3,7 @@ import { CInput } from '../../Components/CInput/CInput';
 import { loginUser } from '../../services/apiCall';
 import { jwtDecode } from 'jwt-decode';
 import { isTokenValid } from '../../Components/utils/function';
+import "./Login.css";
 
 export const Login = () => {
     const [credentials, setCredentials] = useState(
@@ -45,7 +46,8 @@ export const Login = () => {
         <>
             <h1>Login</h1>
             <div>
-                <CInput type="email"
+                <CInput 
+                    type="text"
                     name="email"
                     placeholder="Email"
                     emitFunction={handleChange}

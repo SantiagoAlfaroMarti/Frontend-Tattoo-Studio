@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser } from '../../services/apiCalls';
+import { registerUser } from '../../services/apiCall.js';
 import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { CInput } from '../../components/CInput/CInput';
+import { CInput } from '../../Components/CInput/CInput.jsx';
 import { useNavigate } from 'react-router-dom';
-import { getUserProfile } from '../../services/apiCalls';
+import { getUserProfile } from '../../services/apiCall.js';
 import "./Profile.css";
 
 export const Profile = () => {

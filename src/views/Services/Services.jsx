@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CCard } from '../../components/CCard/CCard';
+import { CCard } from '../../Components/CCard/CCard.jsx';
 
 export const Services = () => {
     const [services, setServices] = useState([])

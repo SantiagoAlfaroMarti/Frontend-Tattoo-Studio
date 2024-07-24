@@ -1,8 +1,8 @@
 import './App.css';
-import { CInput } from './components/CInput/CInput';
-import { Login } from './views/Login/Login';
-import { Body } from './views/Body/Body';
-import { Header } from './components/Header/Header';
+import { CInput } from './Components/CInput/CInput.jsx';
+import { Login } from './views/Login/Login.jsx';
+import { Body } from './views/Body/Body.jsx';
+import { Header } from './Components/Header/Header.jsx';
 
 function App() {
   return (

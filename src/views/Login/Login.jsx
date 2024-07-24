@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { CInput } from '../../components/CInput/CInput';
-import { loginUser } from '../../services/apiCalls';
+import { CInput } from '../../Components/CInput/CInput';
+import { loginUser } from '../../services/apiCall';
 import { jwtDecode } from 'jwt-decode';
-import { isTokenValid } from '../../components/utils/function';
+import { isTokenValid } from '../../Components/utils/function';
 
 export const Login = () => {
     const [credentials, setCredentials] = useState(

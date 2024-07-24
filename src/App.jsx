@@ -1,14 +1,16 @@
-import { useState } from 'react'
 import './App.css'
+import { CInput } from './components/CInput/CInput'
+import { Login } from './views/Login/Login'
+import { Body } from './views/Body/Body'
+import { Header } from './components/Header/Header'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      
+      <Header/>
+      <Body/>
+      {/* <Footer/> */}
     </>
   )
 }
-
 export default App

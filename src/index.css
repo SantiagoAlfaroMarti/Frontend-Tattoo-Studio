@@ -5,10 +5,19 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #322f2f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+body{
+  min-height: 97vh;
+}
+.flex{
+  display: flex
+}
+.justify-space-between{
+  justify-content: space-between;
 }

@@ -1,6 +1,16 @@
 import React from 'react';
+import "./CInput.css";
 
-export const CInput = ({ type = 'text', name = "", placeholder = "", emitFunction, emitOnClickButton, className, value, label }) => {
+export const CInput = ({ 
+        type = 'text', 
+        name = "", 
+        placeholder = "", 
+        emitFunction, 
+        emitOnClickButton, 
+        className, 
+        value, 
+        label 
+    }) => {
     return (
         <>
             <div>

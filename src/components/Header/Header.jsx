@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CSurfer } from '../CSurfer/CSurfer';
+import { CSurfer } from '../CSurfer/CSurfer.jsx';
 
 export const Header = () => {
     const navigate = useNavigate();

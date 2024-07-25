@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { CInput } from '../../Components/CInput/CInput';
-import { loginUser } from '../../services/apiCall';
+import { userLogin } from '../../services/apiCall.js';
 import { jwtDecode } from 'jwt-decode';
-import { isTokenValid } from '../../Components/utils/function';
+import { isTokenValid } from '../../Components/utils/function.js';
 import "./Login.css";
 
 export const Login = () => {
@@ -25,7 +25,7 @@ export const Login = () => {
         console.log("login");
         console.log(credentials);
         try {
-            const response = await loginUser(credentials);
+            const response = await userLogin(credentials);
             if (response.success) {
                 const decodedToken = jwtDecode(response.token)
                 const passport = {

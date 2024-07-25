@@ -9,8 +9,8 @@ export const isTokenValid = (expireAt) => {
         const time = new Date();
         const currentTimeStamp = Date.parse(time) / 1000;
         if (currentTimeStamp > expireAt) {
-            console.log("hemos entrado el if");
-            localStorage.removeItem("passport");
+            console.log("Hemos entrado en el if");
+            localStorage.removeItem("Passport");
             clearInterval(interval)
         }
     }, 60000);

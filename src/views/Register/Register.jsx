@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { register } from '../../services/apiCall.js';
-import { useNavigate, NavLink } from 'react-router-dom';
-import "./Register.css";
+import { registerUser } from '../../services/apiCalls';
+import { useNavigate } from 'react-router-dom';
+import { CInput } from '../../components/CInput/CInput';
+import './Register.css';
 
-export const register = () => {
+export const Register = () => {
     const navigate = useNavigate()
     const [credentials, setCredentials] = useState(
         {
@@ -11,6 +12,7 @@ export const register = () => {
             password_hash: ""
         }
     )
+
     function handleChange(e) {
         console.log('Handle Change')
         setCredentials((prevState) => (
@@ -20,47 +22,55 @@ export const register = () => {
             }
         ))
     }
+
     async function register() {
         try {
             console.log(credentials);
-            const response = await register(credentials)
+            const response = await registerUser(credentials)
+
             if (response.success) {
-                navigate('./views/Login/Login.jsx')
+                navigate('/login')
             } else {
                 alert(response.message)
             }
+
+            console.log(response)
         } catch (error) {
             console.log(error);
         }
     }
 
     return (
-        <div className="register-page">
-            <div className="register-box">
-                <h1>Register</h1>
-                <h2>
-                    Create an account or <NavLink to="./views/Login/Login.jsx">login</NavLink>
-                </h2>
-
-                <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                    onChange={handleChange}
-                />
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Password"
-                    onChange={handleChange}
-                />
-                <input
-                    type="button"
-                    value="Register"
-                    onClick={register}
-                />
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <div className="card my-5">
+                        <div className="card-body">
+                            <h1 className="text-center mb-4">Register</h1>
+                            <form>
+                                <CInput
+                                    type="text"
+                                    name="email"
+                                    placeholder="Email"
+                                    emitFunction={handleChange}
+                                />
+                                <CInput
+                                    type="password"
+                                    name="password_hash"
+                                    placeholder="Password"
+                                    emitFunction={handleChange}
+                                />
+                                <button
+                                    type="button"
+                                    className="btn btn-danger btn-block"
+                                    onClick={register}
+                                >
+                                    Register
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

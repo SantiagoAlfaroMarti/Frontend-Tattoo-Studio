@@ -5,6 +5,9 @@ import { CSurfer } from '../CSurfer/CSurfer.jsx';
 export const Header = () => {
     const navigate = useNavigate();
 
+    const passport = JSON.stringify(localStorage.getItem("passport"))
+    const token = passport.token
+
     return (
         <>
             <div className='flex justify-space-between'>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { register as apiRegister } from '../../services/apiCall.js';
+import { register } from '../../services/apiCall.js';
 import { useNavigate, NavLink } from 'react-router-dom';
 import "./Register.css";
 
-export const registerUsers = () => {
+export const register = () => {
     const navigate = useNavigate()
     const [credentials, setCredentials] = useState(
         {
@@ -20,10 +20,10 @@ export const registerUsers = () => {
             }
         ))
     }
-    async function handleRegister() {
+    async function register() {
         try {
             console.log(credentials);
-            const response = await apiRegister(credentials)
+            const response = await register(credentials)
             if (response.success) {
                 navigate('./views/Login/Login.jsx')
             } else {

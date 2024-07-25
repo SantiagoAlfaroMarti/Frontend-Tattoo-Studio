@@ -12,7 +12,9 @@ export const Admin = () => {
     const bringAllUsers = async () => {
       const allUsers = await getAllUsers(token);
       console.log(allUsers);
-      setUsers(allUsers.data)
+      if (allUsers.success) {
+        setUsers(allUsers.data)
+    }
     };
     bringAllUsers()
   }, []);
@@ -32,8 +34,10 @@ export const Admin = () => {
             <div className="table-row" key={user.id}>
                 <div className="content">{user.id}</div>
                 <div className="content">{user.email}</div>
-                <div className="content">{user.is_active ? "active" : "inactive"}</div>
                 <div className="content">actions</div>
+                <div className="content">{user.is_active ? "active" : "inactive"}</div>
+                
+                
             </div>
             )
         })}

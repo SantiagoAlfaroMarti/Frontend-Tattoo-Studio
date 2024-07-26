@@ -1,22 +1,30 @@
 .service-card {
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .card-text {
-    color: #666;
-  }
+  border: 2px solid #e0e0e0; /* Borde sutil para definir el contorno */
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más prominente */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transición más suave */
+  overflow: hidden;
+  background: #fff; /* Fondo blanco para resaltar el contenido */
+}
+
+.service-card:hover {
+  transform: translateY(-8px); /* Movimiento hacia arriba menos pronunciado */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25); /* Sombra más intensa al hacer hover */
+}
+
+.card-body {
+  padding: 1rem; /* Espaciado interno moderado */
+}
+
+.card-title {
+  font-size: 1.4rem; /* Tamaño de fuente ligeramente reducido */
+  margin-bottom: 0.75rem; /* Espacio debajo del título aumentado */
+  color: #222; /* Color más oscuro para el título */
+  font-weight: 500; /* Peso de fuente medio para el título */
+}
+
+.card-text {
+  font-size: 0.95rem; /* Tamaño de fuente del texto del cuerpo */
+  color: #444; /* Color del texto del cuerpo más oscuro */
+  line-height: 1.6; /* Espaciado entre líneas más amplio para mejorar la legibilidad */
+}

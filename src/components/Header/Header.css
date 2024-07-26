@@ -1,9 +1,8 @@
-.red {
-    color: #e63946;
-}
 .navbar {
     padding: 0.5rem 1rem;
     position: fixed;
+    display: flex;
+    justify-content: center; /* Cambiado de space-between a center para centrar el contenido */
     top: 0;
     left: 0;
     right: 0;
@@ -11,26 +10,16 @@
     z-index: 1000;
     background-color: #f8f9fa;
 }
-.container{
-    font-family: 'Fredericka the Great', cursive;
-}
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-    cursor: pointer;
-}
-.navbar-brand:hover {
-    color: #e63946;
-}
+
 .navbar-nav {
-    margin-left: auto;
+    display: flex; /* Asegúrate de que los elementos de la lista se muestren en línea */
+    align-items: center; /* Centra verticalmente los elementos de la lista */
+    justify-content: center; /* Centra horizontalmente los elementos de la lista */
+    margin-left: 0; /* Elimina el margen automático */
+    margin-right: 0; /* Asegúrate de que no haya margen a la derecha */
 }
+
 .nav-item {
     margin-left: 10px;
-}
-.navbar-toggler {
-    border-color: rgba(78, 98, 18, 0.1);
+    margin-right: 10px; /* Añade margen a ambos lados para espaciado uniforme */
 }

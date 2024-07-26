@@ -1,48 +1,77 @@
-.hidden {
-    display: none;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-
-.card-body {
+.profile-container {
+    display: flex;
+    justify-content: center;
     padding: 20px;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.profile-card {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
 }
 
-.btn-danger:hover {
-    background-color: #ff0000;
-    border-color: #ff0000;
+.profile-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.btn-success {
+.profile-email {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.profile-field {
+    margin-bottom: 1rem;
+}
+
+.profile-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.profile-detail {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.profile-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.profile-edit {
+    background-color: #007bff;
+}
+
+.profile-edit:hover {
+    background-color: #0056b3;
+}
+
+.profile-save {
     background-color: #28a745;
-    border-color: #28a745;
 }
 
-
-.btn-success:hover {
-    background-color: #00ff37;
-    border-color: #00ff37;
+.profile-save:hover {
+    background-color: #218838;
 }
 
-.d-none {
-    display: none;
+.profile-cancel {
+    background-color: #dc3545;
 }
 
-.mx-2 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+.profile-cancel:hover {
+    background-color: #c82333;
 }

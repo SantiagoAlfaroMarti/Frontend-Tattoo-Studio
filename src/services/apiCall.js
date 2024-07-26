@@ -1,19 +1,30 @@
 const URL = 'http://localhost:4000/api';
 
-export const register = async (credentials) => {
-    const request = await fetch(`${URL}/register`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-    });
-    const result = await request.json();
-    return result;
-}
+export const registerUser = async (credentials) => { // Renombrar función
+    try {
+        const request = await fetch(`${URL}/auth/register`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(credentials),
+        });
+
+        if (!request.ok) { // Verificar si la respuesta es correcta
+            throw new Error('La respuesta de la red no fue correcta');
+        }
+
+        const result = await request.json();
+        return result;
+    } catch (error) {
+        console.error('Error en la llamada a la API:', error);
+        return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
+    }
+};
 
 export const userLogin = async (credentials) => {
-    const request = await fetch(`${URL}/login`, {
+    try {
+    const request = await fetch(`${URL}/auth/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -22,9 +33,14 @@ export const userLogin = async (credentials) => {
     });
     const result = await request.json();
     return result;
+} catch (error) {
+    console.error('Error en la llamada a la API:', error);
+    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
 }
+};
 
 export const getUserProfile = async (token) => {
+    try {
     const response = await fetch(`${URL}/users/profile`, {
         method: "GET",
         headers: {
@@ -33,10 +49,15 @@ export const getUserProfile = async (token) => {
         }
     });
     return await response.json()
+} catch (error) {
+    console.error('Error en la llamada a la API:', error);
+    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
 }
+};
 
 export const modifyUserProfile = async (changes, token) => {
-    const response = await fetch(`${URL}/profile/update`, {
+    try {
+    const response = await fetch(`${URL}/users/profile`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -45,9 +66,14 @@ export const modifyUserProfile = async (changes, token) => {
         body: JSON.stringify(changes),
     });
     return await response.json()
+} catch (error) {
+    console.error('Error en la llamada a la API:', error);
+    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
 }
+};
 
 export const getAllUsers = async (token) => {
+    try {
     const response = await fetch(`${URL}/users`, {
         method: "GET",
         headers: {
@@ -56,9 +82,14 @@ export const getAllUsers = async (token) => {
         }
     });
     return await response.json()
+} catch (error) {
+    console.error('Error en la llamada a la API:', error);
+    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
 }
+};
 
 export const deleteUserById = async (token, id) => {
+    try {
 	const response = await fetch(`${URL}/users/${+id}`, {
 		method: "DELETE",
 		headers: {
@@ -67,4 +98,8 @@ export const deleteUserById = async (token, id) => {
 		}
 	})
 	return await response.json()
+} catch (error) {
+    console.error('Error en la llamada a la API:', error);
+    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
 }
+};

@@ -1,16 +1,18 @@
-import React from 'react';
 import "./CInput.css";
+import React from 'react';
+
+
 
 export const CInput = ({ 
-        type = 'text', 
-        name = "", 
-        placeholder = "", 
-        emitFunction, 
-        emitOnClickButton, 
-        className, 
-        value, 
-        label 
-    }) => {
+    type = 'text', 
+    name = "", 
+    placeholder = "", 
+    emitFunction, 
+    emitOnClickButton, 
+    className, 
+    value, 
+    label 
+}) => {
     return (
         <>
             <div>
@@ -28,3 +30,4 @@ export const CInput = ({
         </>
     )
 }
+export default CInput;

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { CInput } from '../../components/CInput/CInput';
-import { loginUser } from '../../services/apiCalls';
+import { CInput } from '../../Components/CInput/CInput';
+import { loginUser } from '../../services/apiCall';
 import { jwtDecode } from 'jwt-decode';
 import { isTokenValid } from '../../Components/utils/function';
 import './Login.css';
+import React from 'react';
 
 export const Login = () => {
     const [credentials, setCredentials] = useState(
@@ -74,3 +75,5 @@ export const Login = () => {
         </div>
       );
     };
+
+export default Login;

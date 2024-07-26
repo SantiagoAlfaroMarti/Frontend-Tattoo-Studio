@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import { CInput } from './Components/CInput/CInput.jsx';
 import { Login } from './views/Login/Login.jsx';
@@ -13,4 +14,4 @@ function App() {
     </>
   )
 }
-export default App
+export default App;

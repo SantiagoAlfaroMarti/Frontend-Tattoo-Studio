@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { registerUser } from '../../services/apiCalls';
+import { registerUser } from '../../services/apiCall';
 import { useNavigate } from 'react-router-dom';
-import { CInput } from '../../components/CInput/CInput';
+import { CInput } from '../../Components/CInput/CInput';
 import './Register.css';
 
 export const Register = () => {

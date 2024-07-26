@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CInput } from '../../Components/CInput/CInput';
 import { useNavigate } from 'react-router-dom'
-import { getUserProfile, updateProfile } from '../../services/apiCall';
+import { getUserProfile, modifyUserProfile } from '../../services/apiCall';
 import "./Profile.css";
 
 export const Profile = () => {
@@ -48,7 +48,7 @@ export const Profile = () => {
     }
 
     const confirmButtonHandler = async () => {
-        const response = await updateProfile(editData, token)
+        const response = await modifyUserProfile(editData, token)
         if (response.success) {
             const newData = await getUserProfile(token)
             sedProfileData(newData.data)

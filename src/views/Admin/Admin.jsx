@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { deleteUserById, getUsers } from './services/apiCall.js';
+import { deleteUserById, getAllUsers } from '../../services/apiCall.js';
 import './Admin.css';
-import { CInput } from './Components/CInput/CInput.jsx';
-import React from 'react';
-
 
 export const Admin = () => {
     const [users, setUsers] = useState([])
@@ -13,7 +10,7 @@ export const Admin = () => {
 
     useEffect(() => {
         const bringAllUsers = async () => {
-            const allUsers = await getUsers(token)
+            const allUsers = await getAllUsers(token)
             console.log(allUsers)
             if (allUsers.success){
                 setUsers(allUsers.data)

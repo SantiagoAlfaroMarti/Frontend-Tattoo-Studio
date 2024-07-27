@@ -1,55 +1,64 @@
 .profile-container {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    padding: 40px;
 }
 
 .profile-card {
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    text-align: left;
 }
 
 .profile-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
 }
 
 .profile-email {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: #555;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: #666;
+    text-align: center;
 }
 
 .profile-field {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .profile-input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     box-sizing: border-box;
+    font-size: 1rem;
 }
 
 .profile-detail {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    color: #444;
 }
 
 .profile-button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     color: #fff;
     cursor: pointer;
     margin: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .profile-edit {

@@ -90,7 +90,7 @@ export const getAllUsers = async (token) => {
 
 export const deleteUserById = async (token, id) => {
     try {
-	const response = await fetch(`${URL}/users/${+id}`, {
+	const response = await fetch(`${URL}/users/:id${+id}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",

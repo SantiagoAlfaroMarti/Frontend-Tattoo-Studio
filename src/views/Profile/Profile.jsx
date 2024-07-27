@@ -12,7 +12,6 @@ export const Profile = () => {
     })
     const [editting, sedEditing] = useState(false)
     const passport = JSON.parse(localStorage.getItem("passport"))
-    const token = passport.token
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -37,7 +36,6 @@ export const Profile = () => {
     }
 
     useEffect(() => {
-        console.log("estamos editando", profileData)
     }, [profileData])
 
     const editInputHandler = (e) => {
@@ -48,6 +46,7 @@ export const Profile = () => {
     }
 
     const confirmButtonHandler = async () => {
+        const token = passport.token;
         const response = await modifyUserProfile(editData, token)
         if (response.success) {
             const newData = await getUserProfile(token)
@@ -62,56 +61,63 @@ export const Profile = () => {
     }
 
     return (
-        <div className="profile-container">
-            <div className="profile-card">
-                <h1 className="profile-title">Profile</h1>
-                <h2 className="profile-email">Welcome {profileData.email}</h2>
-                {editting ? (
-                    <>
-                        <div className="profile-field">
-                            <CInput
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                className="profile-input"
-                                emitFunction={editInputHandler}
-                            />
+        <div className="container py-5">
+            <div className="row justify-content-center">
+                <div className="col-md-8">
+                    <div className="card shadow-lg p-4">
+                        <div className="card-body">
+                            <h1 className="text-center mb-4">Profile</h1>
+                            <h2 className="text-center mb-4">Welcome {profileData.email}</h2>
+    
+                            <div className={`mb-3 ${editting ? "" : "d-none"}`}>
+                                <CInput
+                                    type="text"
+                                    name="first_name"
+                                    placeholder="Name"
+                                    className="form-control"
+                                    emitFunction={editInputHandler}
+                                />
+                            </div>
+                            <p className={`mb-3 ${editting ? "d-none" : ""}`}>
+                                Name: {profileData.first_name || "Not available"}
+                            </p>
+    
+                            <div className={`mb-3 ${editting ? "" : "d-none"}`}>
+                                <CInput
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    className="form-control"
+                                    emitFunction={editInputHandler}
+                                />
+                            </div>
+                            <p className={`mb-3 ${editting ? "d-none" : ""}`}>
+                                Email: {profileData.email}
+                            </p>
+    
+                            <p className="mb-4">
+                                Created_at: {profileData.created_at}
+                            </p>
+    
+                            <div className="text-center">
+                                <CInput
+                                    type="button"
+                                    name="edit"
+                                    value={!editting ? "Edit" : "Cancel"}
+                                    className="btn btn-primary"
+                                    emitOnClickButton={editButtonHandler}
+                                />
+                                <CInput
+                                    type="button"
+                                    name="save"
+                                    value="Save changes"
+                                    className={`btn btn-success mx-2 ${!editting ? "d-none" : ""}`}
+                                    emitOnClickButton={confirmButtonHandler}
+                                />
+                            </div>
                         </div>
-                        <div className="profile-field">
-                            <CInput
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                className="profile-input"
-                                emitFunction={editInputHandler}
-                            />
-                        </div>
-                        <button
-                            className="profile-button profile-save"
-                            onClick={confirmButtonHandler}
-                        >
-                            Save changes
-                        </button>
-                        <button
-                            className="profile-button profile-cancel"
-                            onClick={editButtonHandler}
-                        >
-                            Cancel
-                        </button>
-                    </>
-                ) : (
-                    <>
-                        <p className="profile-detail">Name: {profileData.first_name || "Not available"}</p>
-                        <p className="profile-detail">Email: {profileData.email}</p>
-                        <p className="profile-detail">Created_at: {profileData.created_at}</p>
-                        <button
-                            className="profile-button profile-edit"
-                            onClick={editButtonHandler}
-                        >
-                            Edit
-                        </button>
-                    </>
-                )}
+                    </div>
+                </div>
             </div>
         </div>
     )

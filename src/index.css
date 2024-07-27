@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: black;
-  background-color: rgb(160, 144, 144);
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,45 +14,28 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  padding-top: 60px;
-  background-color: black;
-  background-image: url("./img/tattoostudio.webp");
-  background-size: contain; /* Asegura que la imagen cubra todo el fondo */
-  background-repeat: no-repeat; /* No repite la imagen */
-  background-position: center center; /* Centra la imagen en la pantalla */
-  background-attachment: fixed; /* Fija la imagen al fondo */
-}
-
-/* Ajustes para pantallas más grandes */
-@media (min-width: 1200px) {
-  body::before {
-    background-size: 70% auto; /* Ajusta el tamaño para pantallas grandes */
-  }
-}
-
-/* Ajustes para pantallas medianas */
-@media (max-width: 1199px) and (min-width: 768px) {
-  body::before {
-    background-size: 80% auto; /* Ajusta el tamaño para pantallas medianas */
-  }
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 767px) {
-  body::before {
-    background-size: cover; /* Mantén el tamaño de fondo a cover para pantallas pequeñas */
-  }
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    padding-top: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: src=''
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  color: #333;
+  color: #c5bebe;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; 
+}
+
+p, th, td, tr, label, input, select, .btn {
+  font-family: 'PT Serif', serif;
 }
 
 .flex {
@@ -63,6 +46,6 @@ h1 {
   justify-content: space-between;
 }
 
-.card {
-  background-color: rgb(232, 234, 235);
+.card{
+  background-color: rgb(86, 87, 88);
 }

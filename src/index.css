@@ -14,22 +14,22 @@
 }
 
 body {
-  body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    padding-top: 60px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: src=''
+  font-family: 'Arial', sans-serif; 
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  padding-top: 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url('../img/tattoostudio.jpg');
 }
 
 h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: #c5bebe;
+  color: #282525;
   text-align: center;
   margin-bottom: 2rem; 
 }
@@ -47,5 +47,5 @@ p, th, td, tr, label, input, select, .btn {
 }
 
 .card{
-  background-color: rgb(86, 87, 88);
+  background-color: rgba(217, 188, 41, 0.832);
 }

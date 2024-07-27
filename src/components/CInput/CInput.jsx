@@ -1,7 +1,4 @@
-import "./CInput.css";
 import React from 'react';
-
-
 
 export const CInput = ({ 
     type = 'text', 
@@ -30,4 +27,3 @@ export const CInput = ({
         </>
     )
 }
-export default CInput;

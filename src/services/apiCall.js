@@ -1,6 +1,6 @@
 const URL = 'http://localhost:4000/api';
 
-export const registerUser = async (credentials) => { // Renombrar función
+export const registerUser = async (credentials) => { 
     try {
         const request = await fetch(`${URL}/auth/register`, {
             method: "POST",
@@ -10,7 +10,7 @@ export const registerUser = async (credentials) => { // Renombrar función
             body: JSON.stringify(credentials),
         });
 
-        if (!request.ok) { // Verificar si la respuesta es correcta
+        if (!request.ok) { 
             throw new Error('La respuesta de la red no fue correcta');
         }
 
@@ -18,7 +18,7 @@ export const registerUser = async (credentials) => { // Renombrar función
         return result;
     } catch (error) {
         console.error('Error en la llamada a la API:', error);
-        return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
+        return { success: false, message: 'Algo salió mal' }; 
     }
 };
 
@@ -35,7 +35,7 @@ export const userLogin = async (credentials) => {
     return result;
 } catch (error) {
     console.error('Error en la llamada a la API:', error);
-    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
+    return { success: false, message: 'Algo salió mal' }; 
 }
 };
 
@@ -51,7 +51,7 @@ export const getUserProfile = async (token) => {
     return await response.json()
 } catch (error) {
     console.error('Error en la llamada a la API:', error);
-    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
+    return { success: false, message: 'Algo salió mal' }; 
 }
 };
 
@@ -68,7 +68,7 @@ export const modifyUserProfile = async (changes, token) => {
     return await response.json()
 } catch (error) {
     console.error('Error en la llamada a la API:', error);
-    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
+    return { success: false, message: 'Algo salió mal' }; 
 }
 };
 
@@ -84,7 +84,7 @@ export const getAllUsers = async (token) => {
     return await response.json()
 } catch (error) {
     console.error('Error en la llamada a la API:', error);
-    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
+    return { success: false, message: 'Algo salió mal' }; 
 }
 };
 
@@ -100,7 +100,7 @@ export const deleteUserById = async (token, id) => {
 	return await response.json()
 } catch (error) {
     console.error('Error en la llamada a la API:', error);
-    return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
+    return { success: false, message: 'Algo salió mal' }; 
 }
 };
 

@@ -103,3 +103,17 @@ export const deleteUserById = async (token, id) => {
     return { success: false, message: 'Algo salió mal' }; // Devolver un objeto de error predeterminado
 }
 };
+
+export const createAppointments = async (data, token) => {
+    data.service_id = parseInt(data.service_id);
+    const response = await fetch(`${URL}/appointments/create`, {
+      method: "POST",
+      headers: {
+        "content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    });
+  
+    return await response.json();
+  };

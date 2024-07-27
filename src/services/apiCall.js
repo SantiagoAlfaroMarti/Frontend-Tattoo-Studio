@@ -134,3 +134,19 @@ export const getAppointmentsUser = async (token) => {
         throw error;
     }
 }; 
+
+export const deleteAppointmentsUser = async (token, id) => {
+    try {
+        const response = await fetch(`${URL}/appointments/${+id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+        });
+        return await response.json();
+    } catch (error) {
+        console.error("Error deleting appointments:", error);
+        throw error;
+    }
+}

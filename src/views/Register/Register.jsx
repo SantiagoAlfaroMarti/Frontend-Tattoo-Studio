@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CInput } from '../../Components/CInput/CInput';
 import './Register.css';
-import { registerUser } from '../../services/apiCall'; // Renombrar función
+import { registerUser } from '../../services/apiCall'; 
 
 export const Register = () => {
     const navigate = useNavigate();
@@ -18,19 +18,18 @@ export const Register = () => {
         }));
     }
 
-    async function handleRegister() { // Renombrar función
+    async function handleRegister() { 
         try {
-            const response = await registerUser(credentials); // Cambiar nombre de la función
-
-            if (response && response.success) { // Añadir verificación de respuesta
+            const response = await registerUser(credentials); 
+            if (response && response.success) { 
                 navigate('/login');
             } else {
-                alert(response?.message || 'Registro fallido'); // Añadir encadenamiento opcional y mensaje predeterminado
+                alert(response?.message || 'Registro fallido'); 
             }
 
             console.log(response);
         } catch (error) {
-            console.error('Error de registro:', error); // Mejorar el registro de errores
+            console.error('Error de registro:', error); 
         }
     }
 
@@ -40,7 +39,7 @@ export const Register = () => {
                 <div className="col-md-6">
                     <div className="card my-5">
                         <div className="card-body">
-                            <h1 className="text-center mb-4">Registrar</h1>
+                            <h1 className="text-center mb-4">Register</h1>
                             <form>
                                 <CInput
                                     type="text"
@@ -57,7 +56,7 @@ export const Register = () => {
                                 <button
                                     type="button"
                                     className="btn btn-danger btn-block"
-                                    onClick={handleRegister} // Cambiar nombre de la función
+                                    onClick={handleRegister} 
                                 >
                                     Registrar
                                 </button>

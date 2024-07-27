@@ -29,53 +29,40 @@ export const Home = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <img
-                        alt="Tatuaje 1"
-                        className="d-block carousel-image"
-                        src=".../../../img/tatuaje1.jpg"
+                        alt="Tatuaje Artístico"
+                        className="d-block w-100"
+                        src=".../../../img/recepcionTattooStudio.jpg"
                     />
                     <div className="carousel-caption">
                         <h5 className="animated bounceInRight" style={{ animationDelay: '1s' }}>
+                        Art in Leather
                         </h5>
-                        <p
-                            className="animated bounceInLeft d-none d-md-block"
-                            style={{ animationDelay: '2s' }}
-                        >
-                            Explora nuestra colección de tatuajes exclusivos y personaliza el tuyo.
-                        </p>
+                      
                     </div>
                 </div>
                 <div className="carousel-item">
                     <img
-                        alt="Tatuaje 2"
-                        className="d-block carousel-image"
-                        src=".../../../img/tatuaje2.jpg"
+                        alt="Tatuaje Geométrico"
+                        className="d-block w-100"
+                        src=".../../../img/chairTattoo.jpg"
                     />
                     <div className="carousel-caption">
                         <h5 className="animated bounceInRight" style={{ animationDelay: '1s' }}>
+                            Geometric Perfection
                         </h5>
-                        <p
-                            className="animated bounceInLeft d-none d-md-block"
-                            style={{ animationDelay: '2s' }}
-                        >
-                            Conoce nuestros diseños únicos y encuentra tu estilo perfecto.
-                        </p>
                     </div>
                 </div>
                 <div className="carousel-item">
                     <img
-                        alt="Tatuaje 3"
-                        className="d-block carousel-image"
-                        src=".../../../img/tatuaje3.jpg"
+                        alt="Tatuaje Realista"
+                        className="d-block w-100"
+                        src=".../../../img/freeHandsTattoo.jpg"
                     />
                     <div className="carousel-caption">
                         <h5 className="animated bounceInRight" style={{ animationDelay: '1s' }}>
+                            Impeccable Realism
                         </h5>
-                        <p
-                            className="animated bounceInLeft d-none d-md-block"
-                            style={{ animationDelay: '2s' }}
-                        >
-                            Deja que nuestros artistas transformen tus ideas en arte.
-                        </p>
+                        
                     </div>
                 </div>
             </div>

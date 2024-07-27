@@ -27,7 +27,7 @@ export const Services = () => {
   return (
     <section className="services-section">
       <header className="services-header">
-        <h1 className="services-heading">Our Services</h1>
+        <h1 className="services-heading">Services</h1>
       </header>
       <div className="services-list">
         {services.map((service) => (

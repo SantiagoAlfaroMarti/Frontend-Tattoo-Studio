@@ -2,7 +2,7 @@
     padding: 0.5rem 1rem;
     position: fixed;
     display: flex;
-    justify-content: center; /* Cambiado de space-between a center para centrar el contenido */
+    justify-content: center;
     top: 0;
     left: 0;
     right: 0;
@@ -12,14 +12,14 @@
 }
 
 .navbar-nav {
-    display: flex; /* Asegúrate de que los elementos de la lista se muestren en línea */
-    align-items: center; /* Centra verticalmente los elementos de la lista */
-    justify-content: center; /* Centra horizontalmente los elementos de la lista */
-    margin-left: 0; /* Elimina el margen automático */
-    margin-right: 0; /* Asegúrate de que no haya margen a la derecha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .nav-item {
     margin-left: 10px;
-    margin-right: 10px; /* Añade margen a ambos lados para espaciado uniforme */
+    margin-right: 10px;
 }

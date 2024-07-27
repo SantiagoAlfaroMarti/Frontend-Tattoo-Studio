@@ -30,20 +30,19 @@ export const Home = () => {
                 <div className="carousel-item active">
                     <img
                         alt="Tatuaje Artístico"
-                        className="d-block w-100"
+                        className="d-block w-10 mx-auto carousel-image"
                         src=".../../../img/recepcionTattooStudio.jpg"
                     />
                     <div className="carousel-caption">
                         <h5 className="animated bounceInRight" style={{ animationDelay: '1s' }}>
-                        Art in Leather
+                            Art in Leather
                         </h5>
-                      
                     </div>
                 </div>
                 <div className="carousel-item">
                     <img
                         alt="Tatuaje Geométrico"
-                        className="d-block w-100"
+                        className="d-block w-10 mx-auto carousel-image"
                         src=".../../../img/chairTattoo.jpg"
                     />
                     <div className="carousel-caption">
@@ -55,14 +54,13 @@ export const Home = () => {
                 <div className="carousel-item">
                     <img
                         alt="Tatuaje Realista"
-                        className="d-block w-100"
+                        className="d-block w-10 mx-auto carousel-image"
                         src=".../../../img/freeHandsTattoo.jpg"
                     />
                     <div className="carousel-caption">
                         <h5 className="animated bounceInRight" style={{ animationDelay: '1s' }}>
                             Impeccable Realism
                         </h5>
-                        
                     </div>
                 </div>
             </div>
@@ -85,5 +83,5 @@ export const Home = () => {
                 <span className="visually-hidden">Next</span>
             </button>
         </div>
-    );
-};
+    )
+}

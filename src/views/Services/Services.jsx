@@ -25,20 +25,17 @@ export const Services = () => {
   }, [])
 
   return (
-    <section className="services-section">
-      <header className="services-header">
-        <h1 className="services-heading">Services</h1>
-      </header>
-      <div className="services-list">
-        {services.map((service) => (
-          <article key={service.id} className="service-item">
-            <h2 className="service-title">{service.service_name}</h2>
-            <p className="service-details">{service.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-export default Services;
+    <div className="container">
+    <div className="card">
+      <h1 className="text-center">Services</h1>
+    </div>
+    <div className="row">
+      {services.map((service) => (
+        <div key={service.id} className="col-md-4 mb-4">
+          <CCard name={service.service_name} description={service.description} />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+}

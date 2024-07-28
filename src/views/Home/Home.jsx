@@ -29,7 +29,7 @@ export const Home = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <img
-                        alt="Tatuaje Artístico"
+                        alt="Artistic tattoo"
                         className="d-block w-10 mx-auto carousel-image"
                         src=".../../../img/recepcionTattooStudio.jpg"
                     />
@@ -41,7 +41,7 @@ export const Home = () => {
                 </div>
                 <div className="carousel-item">
                     <img
-                        alt="Tatuaje Geométrico"
+                        alt="Geometric tattoo"
                         className="d-block w-10 mx-auto carousel-image"
                         src=".../../../img/chairTattoo.jpg"
                     />
@@ -53,7 +53,7 @@ export const Home = () => {
                 </div>
                 <div className="carousel-item">
                     <img
-                        alt="Tatuaje Realista"
+                        alt="Realist tattoo"
                         className="d-block w-10 mx-auto carousel-image"
                         src=".../../../img/freeHandsTattoo.jpg"
                     />

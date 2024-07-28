@@ -8,7 +8,7 @@
     right: 0;
     height: 60px;
     z-index: 1000;
-    background-color: #f8f9fa;
+    background-color: black !important;
 }
 
 .navbar-nav {
@@ -17,6 +17,7 @@
     justify-content: center;
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
 }
 
 .nav-item {

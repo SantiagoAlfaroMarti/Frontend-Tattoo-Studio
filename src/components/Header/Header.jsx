@@ -17,10 +17,11 @@ export const Header = () => {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-            <div className="container">
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div className="container d-flex justify-content-between">
+                <a className="navbar-brand text-white display-4" href="#">Tattoo Studio</a>
+                <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul className="navbar-nav">
                         <li className="nav-item">
                             <CSurfer path="/" content="Home" />
                         </li>
@@ -43,5 +44,5 @@ export const Header = () => {
                 </div>
             </div>
         </nav>
-    );
-};
+    )
+}

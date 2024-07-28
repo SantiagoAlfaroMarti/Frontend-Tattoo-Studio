@@ -29,8 +29,8 @@ export const userLogin = async (credentials) => {
     const result = await request.json();
     return result;
 } catch (error) {
-    console.error('Error en la llamada a la API:', error);
-    return { success: false, message: 'Algo salió mal' }; 
+    console.error("User logging error:", error);
+    throw error;
 }
 };
 

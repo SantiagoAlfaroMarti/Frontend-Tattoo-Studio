@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { deleteAppointmentsUser, getAppointmentsUser, createAppointments } from "../../services/apiCalls";
+import { deleteAppointment, showMyAppointments, createAppointment } from "../../services/apiCall";
 import { useNavigate } from 'react-router-dom';
 import './Appointments.css';
 
@@ -32,7 +32,7 @@ export const Appointments = () => {
 
     const handleSendAppointment = async () => {
         try {
-            const response = await createAppointments(newAppointment, passport.token);
+            const response = await createAppointment(newAppointment, passport.token);
             if (response.success) {
                 setMyAppointments([...myAppointments, response.data]);
                 setNewAppointment({
@@ -52,7 +52,7 @@ export const Appointments = () => {
         }
         const bringMyAppointments = async () => {
             try {
-                const response = await getAppointmentsUser(passport.token);
+                const response = await showMyAppointments(passport.token);
                 if (response.success && Array.isArray(response.data)) {
                     setMyAppointments(response.data);
                 } else {
@@ -67,7 +67,7 @@ export const Appointments = () => {
 
     const deleteAppointmentHandler = async (e) => {
         const id = +e.target.name;
-        const response = await deleteAppointmentsUser(passport.token, id);
+        const response = await deleteAppointment(passport.token, id);
         if (response.success) {
             const remainingAppointments = myAppointments.filter((appointment) => appointment.id !== id);
             setMyAppointments(remainingAppointments);
@@ -105,11 +105,11 @@ export const Appointments = () => {
                         <option value="" disabled hidden>
                             Select a service...
                         </option>
-                        <option value={1}>Tatuaje Personalizado</option>
-                        <option value={2}>Tatuaje del Catálogo</option>
-                        <option value={3}>Restauración y Rejuvenecimiento</option>
-                        <option value={4}>Colocación de Piercings y dilatadores</option>
-                        <option value={5}>Venta de piercings y otros artículos</option>
+                            <option value={1}>Tattoo Design</option>
+                            <option value={2}>Our Catalog</option>
+                            <option value={3}>Tattoo Removal</option>
+                            <option value={4}>Piercings and Expanders</option>
+                            <option value={5}>Accessory Sales</option>
                     </select>
                 </div>
                 <button

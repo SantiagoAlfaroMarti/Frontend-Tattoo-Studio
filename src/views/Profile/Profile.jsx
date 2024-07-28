@@ -5,27 +5,43 @@ import { getUserProfile, modifyUserProfile } from '../../services/apiCall';
 import "./Profile.css";
 
 export const Profile = () => {
-    const [profileData, sedProfileData] = useState({ name: "", email: "", CreatedAt: "" })
-    const [editData, sedEditData] = useState({
+    const [profileData, setProfileData] = useState({ name: "", email: "", CreatedAt: "" })
+    const [editData, setEditData] = useState({
         name: "",
         email: ""
     })
-    const [editting, sedEditing] = useState(false)
+    const [editting, setEditing] = useState(false)
     const passport = JSON.parse(localStorage.getItem("passport"))
     const navigate = useNavigate()
 
-    useEffect(() => {
+    const formatDate = (isoDate) => {
+        const date = new Date(isoDate);
+        return date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+      };
+
+      useEffect(() => {
         if (!passport) {
-            navigate("/login")
+            navigate("/login");
         } else {
             const bringMyProfile = async () => {
-                const response = await getUserProfile(passport.token)
-                sedProfileData(response.data)
-                console.log(response)
-            }
-            bringMyProfile()
+                try {
+                    const response = await getUserProfile(passport.token);
+                    if (response.success) {
+                        setProfileData(response.data);
+                    } else {
+                        navigate("/login");
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+            bringMyProfile();
         }
-    }, [])
+    }, [navigate, passport]);
 
     const editButtonHandler = () => {
         sedEditData({
@@ -37,9 +53,8 @@ export const Profile = () => {
 
     useEffect(() => {
     }, [profileData])
-
     const editInputHandler = (e) => {
-        sedEditData({
+        setEditData({
             ...editData,
             [e.target.name]: e.target.value
         })
@@ -50,14 +65,9 @@ export const Profile = () => {
         const response = await modifyUserProfile(editData, token)
         if (response.success) {
             const newData = await getUserProfile(token)
-            sedProfileData(newData.data)
-            sedEditing(!editting)
+            setProfileData(newData.data)
+            setEditing(!editting)
         }
-    }
-
-    const logout = () => {
-        localStorage.removeItem("passport")
-        navigate("/login")
     }
 
     return (

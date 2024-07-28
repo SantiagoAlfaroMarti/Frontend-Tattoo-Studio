@@ -94,8 +94,8 @@ export const deleteUserById = async (token, id) => {
 	})
 	return await response.json()
 } catch (error) {
-    console.error('Error en la llamada a la API:', error);
-    return { success: false, message: 'Algo salió mal' }; 
+    console.error("Error deleting user:", error);
+    throw error; 
 }
 };
 

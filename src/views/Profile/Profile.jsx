@@ -44,11 +44,11 @@ export const Profile = () => {
     }, [navigate, passport]);
 
     const editButtonHandler = () => {
-        sedEditData({
+        setEditData({
             name: profileData.name,
             email: profileData.email
         })
-        sedEditing(!editting)
+        setEditing(!editting)
     }
 
     useEffect(() => {

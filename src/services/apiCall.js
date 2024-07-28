@@ -85,7 +85,7 @@ export const getAllUsers = async (token) => {
 
 export const deleteUserById = async (token, id) => {
     try {
-	const response = await fetch(`${URL}/users/:id${+id}`, {
+	const response = await fetch(`${URL}/users/${+id}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",
@@ -132,7 +132,7 @@ export const showMyAppointments = async (token) => {
 
 export const deleteAppointment = async (token, id) => {
     try {
-        const response = await fetch(`${URL}/appointments/delete${+id}`, {
+        const response = await fetch(`${URL}/appointments/delete/${+id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -144,4 +144,4 @@ export const deleteAppointment = async (token, id) => {
         console.error("Error deleting appointments:", error);
         throw error;
     }
-};
+}

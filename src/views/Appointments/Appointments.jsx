@@ -6,7 +6,7 @@ import './Appointments.css';
 export const Appointments = () => {
     const [myAppointments, setMyAppointments] = useState([]);
     const [newAppointment, setNewAppointment] = useState({
-        date: "",
+        appointment_date: "",
         service_id: "",
     });
     const passport = JSON.parse(localStorage.getItem("passport"));
@@ -15,8 +15,8 @@ export const Appointments = () => {
     const todayString = new Date().toISOString().split("T")[0];
 
     const formatDate = (isoDate) => {
-        const date = new Date(isoDate);
-        return date.toLocaleDateString("en-US", {
+        const appDate = new Date(isoDate);
+        return appDate.toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",
@@ -36,7 +36,7 @@ export const Appointments = () => {
             if (response.success) {
                 setMyAppointments([...myAppointments, response.data]);
                 setNewAppointment({
-                    date: "",
+                    appointment_date: "",
                     service_id: "",
                 });
             }
@@ -83,13 +83,13 @@ export const Appointments = () => {
                 <h2 className="text-center mb-4">New Appointment</h2>
                 <form>
                     <div className="form-group">
-                        <label htmlFor="date">Date:</label>
+                        <label htmlFor="appointment_date">Date:</label>
                         <input
                             type="date"
-                            id="date"
+                            id="appointment_date"
                             min={todayString}
-                            value={newAppointment.date}
-                            name="date"
+                            value={newAppointment.appointment_date}
+                            name="appointment_date"
                             onChange={(e) => inputHandler(e)}
                             className="form-control"
                         />
@@ -140,8 +140,8 @@ export const Appointments = () => {
                                 myAppointments.map((appointment) => (
                                     <tr key={appointment.id}>
                                         <td className="text-center">{appointment.id}</td>
-                                        <td className="text-center">{formatDate(appointment.date)}</td>
-                                        <td className="text-center">{appointment.services.service_name}</td>
+                                        <td className="text-center">{formatDate(appointment.appointment_date)}</td>
+                                        <td className="text-center">{appointment.service.service_name}</td>
                                         <td className="text-center">
                                             <button
                                                 type="button"

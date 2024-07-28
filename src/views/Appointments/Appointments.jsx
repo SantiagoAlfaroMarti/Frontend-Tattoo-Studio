@@ -81,45 +81,48 @@ export const Appointments = () => {
         <div className="appointments-container container my-5">
             <div className="create-appointment card shadow-lg p-5 mb-5 bg-white rounded">
                 <h2 className="text-center mb-4">New Appointment</h2>
-                <div className="form-group">
-                    <label htmlFor="date">Date:</label>
-                    <input
-                        type="date"
-                        id="date"
-                        min={todayString}
-                        value={newAppointment.date}
-                        name="date"
-                        onChange={(e) => inputHandler(e)}
-                        className="form-control"
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="service_id">Service:</label>
-                    <select
-                        id="service_id"
-                        name="service_id"
-                        value={newAppointment.service_id}
-                        onChange={(e) => inputHandler(e)}
-                        className="form-control"
-                    >
-                        <option value="" disabled hidden>
-                            Select a service...
-                        </option>
+                <form>
+                    <div className="form-group">
+                        <label htmlFor="date">Date:</label>
+                        <input
+                            type="date"
+                            id="date"
+                            min={todayString}
+                            value={newAppointment.date}
+                            name="date"
+                            onChange={(e) => inputHandler(e)}
+                            className="form-control"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="service_id">Service:</label>
+                        <select
+                            id="service_id"
+                            name="service_id"
+                            value={newAppointment.service_id}
+                            onChange={(e) => inputHandler(e)}
+                            className="form-control"
+                        >
+                            <option value="" disabled hidden>
+                                Select a service...
+                            </option>
                             <option value={1}>Tattoo Design</option>
                             <option value={2}>Our Catalog</option>
                             <option value={3}>Tattoo Removal</option>
                             <option value={4}>Piercings and Expanders</option>
                             <option value={5}>Accessory Sales</option>
-                    </select>
-                </div>
-                <button
-                    onClick={handleSendAppointment}
-                    className="btn btn-primary btn-lg btn-block mt-4"
-                >
-                    Create Appointment
-                </button>
+                        </select>
+                    </div>
+                    <button
+                        type="button"
+                        onClick={handleSendAppointment}
+                        className="btn btn-primary btn-lg btn-block mt-4"
+                    >
+                        Create Appointment
+                    </button>
+                </form>
             </div>
-
+    
             <div className="card shadow-lg p-5 bg-white rounded">
                 <h2 className="text-center mb-4">My Appointments</h2>
                 <div className="table-responsive">
@@ -154,7 +157,7 @@ export const Appointments = () => {
                             ) : (
                                 <tr>
                                     <td colSpan="4" className="text-center">
-                                        You have no appointments yet.
+                                        No appointments assigned
                                     </td>
                                 </tr>
                             )}
@@ -164,4 +167,4 @@ export const Appointments = () => {
             </div>
         </div>
     )
-}
+    }

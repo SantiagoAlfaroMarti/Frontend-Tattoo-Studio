@@ -9,16 +9,11 @@ export const registerUser = async (credentials) => {
             },
             body: JSON.stringify(credentials),
         });
-
-        if (!request.ok) { 
-            throw new Error('La respuesta de la red no fue correcta');
-        }
-
         const result = await request.json();
         return result;
     } catch (error) {
-        console.error('Error en la llamada a la API:', error);
-        return { success: false, message: 'Algo salió mal' }; 
+        console.error("User register error:", error);
+        throw error; 
     }
 };
 

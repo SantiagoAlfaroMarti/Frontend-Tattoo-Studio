@@ -62,8 +62,8 @@ export const modifyUserProfile = async (changes, token) => {
     });
     return await response.json()
 } catch (error) {
-    console.error('Error en la llamada a la API:', error);
-    return { success: false, message: 'Algo salió mal' }; 
+    console.error("Error updating user:", error);
+    throw error;
 }
 };
 

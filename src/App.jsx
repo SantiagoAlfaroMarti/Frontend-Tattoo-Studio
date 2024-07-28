@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import './App.css';
+import { CInput } from './Components/CInput/CInput.jsx';
+import { Login } from './views/Login/Login.jsx';
+import { Body } from './views/Body/Body.jsx';
+import { Header } from './Components/Header/Header.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      
+      <Header />
+      <Body />
     </>
   )
 }
-
-export default App
+export default App;

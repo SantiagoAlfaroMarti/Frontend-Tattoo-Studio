@@ -1,0 +1,63 @@
+.appointments-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  background-color: #e7c830;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid #2e2e2e;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  padding: 1.2rem;
+  border: 1px solid #3c3c3c;
+}
+
+.table thead th {
+  background-color: #c8a417;
+  color: #ffffff;
+  text-align: center;
+}
+
+.table-bordered {
+  border: 1px solid #2b2b2b;
+}
+
+.create-appointment .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.create-appointment .form-control {
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #4b4b4b;
+}
+
+.create-appointment .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}

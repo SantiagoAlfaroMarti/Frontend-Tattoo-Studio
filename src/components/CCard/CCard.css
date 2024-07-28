@@ -1,0 +1,30 @@
+.service-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  background: #fff;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #222;
+  font-weight: 500;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}

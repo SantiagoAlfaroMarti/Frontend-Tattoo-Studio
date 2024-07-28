@@ -4,11 +4,48 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: black;
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Arial', sans-serif; 
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  padding-top: 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: black;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #282525;
+  text-align: center;
+  margin-bottom: 2rem; 
+}
+
+p, th, td, tr, label, input, select, .btn {
+  font-family: 'PT Serif', serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.card{
+  background-color: rgba(217, 188, 41, 0.832);
 }

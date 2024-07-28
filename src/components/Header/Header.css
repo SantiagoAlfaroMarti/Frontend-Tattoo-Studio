@@ -1,0 +1,26 @@
+.navbar {
+    padding: 0.5rem 1rem;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 1000;
+    background-color: black !important;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}

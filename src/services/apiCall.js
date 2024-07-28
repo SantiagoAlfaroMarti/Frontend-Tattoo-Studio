@@ -99,7 +99,7 @@ export const deleteUserById = async (token, id) => {
 }
 };
 
-export const createAppointments = async (data, token) => {
+export const createAppointment = async (data, token) => {
     data.service_id = parseInt(data.service_id);
     const response = await fetch(`${URL}/appointments/create`, {
       method: "POST",
@@ -113,9 +113,9 @@ export const createAppointments = async (data, token) => {
     return await response.json();
   };
 
-export const getAppointmentsUser = async (token) => {
+export const showMyAppointments = async (token) => {
     try {
-        const response = await fetch(`${URL}/appointments/user`, {
+        const response = await fetch(`${URL}/appointments/scheduled`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -130,9 +130,9 @@ export const getAppointmentsUser = async (token) => {
     }
 }; 
 
-export const deleteAppointmentsUser = async (token, id) => {
+export const deleteAppointment = async (token, id) => {
     try {
-        const response = await fetch(`${URL}/appointments/${+id}`, {
+        const response = await fetch(`${URL}/appointments/delete${+id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -144,4 +144,4 @@ export const deleteAppointmentsUser = async (token, id) => {
         console.error("Error deleting appointments:", error);
         throw error;
     }
-}
+};
